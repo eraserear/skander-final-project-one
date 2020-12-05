@@ -12,6 +12,9 @@ app.use(bodyParser.raw({ type: "*/*" }));
 const cors = require('cors')
 app.use(cors())
 
+const morgan = require("morgan");
+app.use(morgan("combined"));
+
 app.get("/sourcecode", (req, res) => {
   res.send(
     require("fs")
