@@ -9,6 +9,9 @@ const app = express();
 const bodyParser = require("body-parser");
 app.use(bodyParser.raw({ type: "*/*" }));
 
+const cors = require('cors')
+app.use(cors())
+
 app.get("/sourcecode", (req, res) => {
   res.send(
     require("fs")
