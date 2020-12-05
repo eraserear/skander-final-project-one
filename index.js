@@ -23,11 +23,6 @@ app.get("/sourcecode", (req, res) => {
   );
 });
 
-const listener = app.listen(process.env.PORT, () => {
-  console.log("Your app is listening on port " + listener.address().port);
-});
-
-
 //Users
 let users = new Map();
 
@@ -410,4 +405,6 @@ app.get("/messages", (req, res) => {
   res.send({ success: true, messages });
 });
 
-app.listen(process.env.PORT || 3000);
+const listener = app.listen(process.env.PORT, () => {
+  console.log("Your app is listening on port " + listener.address().port);
+});
